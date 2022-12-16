@@ -18,18 +18,19 @@ public class Student {
         return totalPointsEarned;
     }
 
-    public void addPoints(){
+    public void addPoints(int points){
         greatestPoint+=points;
         totalPointsEarned+=points;
         if (greatestPoint<points){
             System.out.println(points);
         }
     }
-    public void studentInfo(){
-        System.out.println("Student: " + Student);
-        System.out.println("Points"+ points);
-        System.out.println("Total points:" + getTotalPointsEarned());
-        System.out.println("Most points earned: " + getGreatestPoints());
+    public String studentInfo(){
+        String studentInfo = "Student: " + Student +"\n";
+        studentInfo+= "Points"+ points+ '\n';
+        studentInfo+= "Total points:" + getTotalPointsEarned() + "\n";
+        studentInfo+= "Most points earned: " + getGreatestPoints();
+        return studentInfo;
     }
 
 }
