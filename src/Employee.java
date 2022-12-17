@@ -2,37 +2,46 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int employeeID;
-    private static int mostRecentID=100;
-    private static int totalEmployee=0;
-    public Employee(String firstName, String lastName){
+    private static int mostRecentID = 100;
+    private static int totalEmployee = 0;
+
+    public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.employeeID = employeeID;
-         mostRecentID = employeeID++;
-         employeeID = mostRecentID;
-         totalEmployee++;
+        mostRecentID++;
+        employeeID = mostRecentID;
+        totalEmployee++;
 
 
     }
-    public static int totalEmployee(){
-       return totalEmployee;
+
+    public static int totalEmployee() {
+        return totalEmployee;
     }
-    public static int mostRecentID(){
+
+    public static int mostRecentID() {
         return mostRecentID;
     }
-    public String getfullName(){
+
+    public static String classInfo() {
+        String str = "Most recent ID assigned: " + mostRecentID;
+        str += "\nTotal employees hired: " + totalEmployee;
+        return str;
+    }
+
+    public String getfullName() {
         return firstName + " " + lastName;
     }
-    public int getEmployeeID(){
+
+    public int getEmployeeID() {
         return employeeID;
     }
-    public void employeeInfo(){
-        System.out.println("Employee's full name: "+ getfullName());
-        System.out.println("Employee's ID: " + employeeID);
+
+    public String employeeInfo() {
+        String s = "Employee's full name: " + getfullName();
+        s += "\nEmployee's ID: " + employeeID;
+        return s;
     }
-    public void classInfo(){
-        System.out.println("Most recent ID assigned: " + mostRecentID);
-        System.out.println("Total employees hired: " + totalEmployee);
-    }
+
 
 }

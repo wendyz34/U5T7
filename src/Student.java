@@ -1,15 +1,11 @@
 public class Student {
-    private String Student;
-    private int points;
+    private String name;
+    private int pointsEarned;
     private static int totalPointsEarned = 0;
     private static int greatestPoint = 0;
     public Student(String student){
-        this.Student = Student;
-        points = 0;
-    }
-    public Student(String Student, int points){
-        this.Student = Student;
-        points+=points;
+        this.name = student;
+        pointsEarned = 0;
     }
     public static int getGreatestPoints() {
     return greatestPoint;
@@ -19,17 +15,15 @@ public class Student {
     }
 
     public void addPoints(int points){
-        greatestPoint+=points;
+        pointsEarned+=points;
         totalPointsEarned+=points;
-        if (greatestPoint<points){
-            System.out.println(points);
+        if (greatestPoint<pointsEarned){
+            greatestPoint = pointsEarned;
         }
     }
     public String studentInfo(){
-        String studentInfo = "Student: " + Student +"\n";
-        studentInfo+= "Points"+ points+ '\n';
-        studentInfo+= "Total points:" + getTotalPointsEarned() + "\n";
-        studentInfo+= "Most points earned: " + getGreatestPoints();
+        String studentInfo = "Student: " +name +"\n";
+        studentInfo += "Points: "+ pointsEarned;
         return studentInfo;
     }
 
